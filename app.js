@@ -65,8 +65,15 @@
       document.getElementById("fileCount").textContent = "Puedes seleccionar varios archivos.";
       await loadGallery();
     } catch (err) {
-      console.error(err);
-      say(`No se pudo completar la carga (${uploaded} archivo(s) enviados). Revisa tu conexión e inténtalo de nuevo.`, "error");
+      console.error("ERROR DE CARGA:", err);
+
+      alert(
+       "ERROR DE SUPABASE:\n\n" +
+      (err.message || JSON.stringify(err))
+      );
+
+       say("No se pudo subir el archivo. Revisa el error.", "error");
+    
     } finally {
       submit.disabled = false; submit.textContent = "Enviar nuestros recuerdos ♡";
     }
