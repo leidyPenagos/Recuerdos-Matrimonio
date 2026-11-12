@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f1e9">
+  <title>Leidy & Daniel | Nuestros recuerdos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="hero">
+    <nav><span class="monogram">L <i>&</i> D</span><a href="#recuerdos">Nuestros recuerdos</a></nav>
+    <div class="hero-content">
+      <p class="eyebrow">NUESTRO GRAN DÍA</p>
+      <h1>Leidy <em>&</em> Daniel</h1>
+      <p class="date">05 · 12 · 2026</p>
+      <div class="ornament">✧</div>
+      <h2>Un día para recordar,<br><em>momentos para atesorar.</em></h2>
+      <p class="intro">Nos hace mucha ilusión compartir este día contigo. Ayúdanos a guardar cada sonrisa, abrazo y momento especial.</p>
+      <a class="button button-light" href="#subir">Compartir mis recuerdos</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="upload-section section" id="subir">
+      <p class="eyebrow">EL MEJOR REGALO ES RECORDARLO</p>
+      <h2>Comparte tus <em>fotografías y videos</em></h2>
+      <p class="section-copy">¿Tomaste alguna foto o video durante nuestra celebración? ¡Queremos verlo! Selecciona tus archivos y compártelos con nosotros.</p>
+
+      <form id="uploadForm" class="upload-card">
+        <label for="guestName">Tu nombre</label>
+        <input id="guestName" name="guestName" type="text" maxlength="80" placeholder="¿Quién comparte estos recuerdos?" required>
+
+        <label for="message">Un mensaje para los novios <span>(opcional)</span></label>
+        <textarea id="message" name="message" maxlength="500" rows="3" placeholder="Una felicitación, un recuerdo..."></textarea>
+
+        <label class="dropzone" for="files">
+          <span class="upload-icon">＋</span>
+          <strong>Seleccionar fotografías y videos</strong>
+          <small>JPG, PNG, WEBP, MP4 y MOV · Máximo 50 MB por archivo</small>
+          <small id="fileCount">Puedes seleccionar varios archivos.</small>
+        </label>
+        <input id="files" type="file" accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime" multiple hidden>
+        <div id="preview" class="preview-list"></div>
+        <button class="button button-primary" id="submitButton" type="submit">Enviar nuestros recuerdos ♡</button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <p class="privacy-note">Al compartir tus archivos, aceptas que Leidy y Daniel puedan conservarlos como recuerdo de su boda.</p>
+      </form>
+    </section>
+
+    <section class="gallery-section section" id="recuerdos">
+      <p class="eyebrow">PEQUEÑOS INSTANTES, GRANDES RECUERDOS</p>
+      <h2>Galería de <em>nuestro día</em></h2>
+      <p class="section-copy">Los momentos compartidos por nuestros familiares y amigos.</p>
+      <div id="gallery" class="gallery"><p class="muted">Cargando recuerdos...</p></div>
+      <button id="refreshGallery" class="button button-outline" type="button">Actualizar galería</button>
+    </section>
+
+    <section class="share-section">
+      <div class="share-inner">
+        <p class="eyebrow">GRACIAS POR SER PARTE</p>
+        <h2>Este recuerdo también es <em>tuyo.</em></h2>
+        <p>Comparte nuestra página con otros invitados para que nadie se quede sin subir sus fotografías.</p>
+        <div class="share-actions">
+          <button class="button button-light" id="shareButton" type="button">Compartir página</button>
+          <a class="button button-whatsapp" id="whatsappButton" href="#" target="_blank" rel="noopener">Compartir por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>Con cariño, Leidy & Daniel</span><span>05 · 12 · 2026</span></footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
